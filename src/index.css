@@ -1,0 +1,24 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lilita+One&display=swap');
+
+:root {
+  --verde-menta: #A2D2A2;
+  --verde-floresta: #5E8D6B;
+  --amarelo-sol: #F7D06E;
+  --azul-ceu: #88B7D3;
+  --off-white: #F7F7F7;
+  --fonte-titulo: 'Lilita One', cursive;
+  --fonte-corpo: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  background-color: var(--off-white);
+  color: #333;
+}
+
+/* Efeito de rolagem suave */
+html {
+  scroll-behavior: smooth;
+}

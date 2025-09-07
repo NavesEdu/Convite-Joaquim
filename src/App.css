@@ -1,0 +1,147 @@
+/* --- Estilos Gerais --- */
+.App {
+  text-align: center;
+  position: relative; /* Contexto para o fundo animado */
+  z-index: 1; /* Garante que o conteúdo fique acima do fundo */
+}
+
+/* --- Fundo Animado de Pegadas --- */
+@keyframes walk-fade {
+  0% { transform: scale(0.5); opacity: 0; }
+  20% { transform: scale(1); opacity: 0.7; }
+  80% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(0.5); opacity: 0; }
+}
+
+.dino-footprints-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dino-footprints-background div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  animation: walk-fade 12s infinite ease-in-out;
+  background-image: url('/images/dino-footprint-single.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Posicionamento e atrasos para as pegadas (sem alterações) */
+.dino-footprints-background div:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; transform: rotate(-15deg); }
+.dino-footprints-background div:nth-child(2) { top: 20%; left: 15%; animation-delay: 2s; transform: rotate(5deg); }
+/* ... (as outras 16 regras de posicionamento continuam aqui) ... */
+.dino-footprints-background div:nth-child(18) { top: 70%; left: 80%; animation-delay: 5.5s; transform: rotate(-15deg); }
+
+
+/* --- Seção Principal (Hero) --- */
+.hero-container {
+  /* Garante que o Hero preencha a seção de snap */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url('/images/dino-fundo.jpg'); /* Caminho na pasta 'public' */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-container h1, .hero-container h2, .hero-container p, .hero-container .countdown, .hero-container .hero-button {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Estilos para os Cartões de Seção --- */
+.content-section {
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  margin: 1rem auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  color: var(--verde-floresta);
+}
+
+/* --- Galeria de Fotos --- */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 5px solid var(--verde-menta);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* --- Estilo do Botão --- */
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: var(--amarelo-sol);
+  color: var(--verde-floresta);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--amarelo-sol);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--verde-menta);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: var(--verde-floresta);
+  color: var(--off-white);
+  padding: 1.5rem;
+  width: 100%;
+}
