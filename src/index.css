@@ -18,7 +18,6 @@ body {
   color: #333;
 }
 
-/* Efeito de rolagem suave */
 html {
   scroll-behavior: smooth;
 }

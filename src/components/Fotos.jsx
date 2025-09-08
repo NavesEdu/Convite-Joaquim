@@ -2,18 +2,16 @@
 import React, { useState } from 'react';
 import './Fotos.css'; // Criaremos este arquivo de CSS específico para Fotos
 
+import foto1 from '../assets/joaquim-1.jpeg';
+import foto2 from '../assets/joaquim-2.jpeg';
+import foto3 from '../assets/joaquim-3.jpeg';
+import foto4 from '../assets/joaquim-4.jpeg';
+import foto5 from '../assets/joaquim-5.jpeg';
+import foto6 from '../assets/joaquim-6.jpeg';
+import foto7 from '../assets/joaquim-7.jpeg';
+
 function Fotos() {
-  // Array com os caminhos das suas fotos.
-  // IMPORTANTE: Ajuste estes caminhos e nomes de arquivo!
-  const photos = [
-    '/joaquim/joaquim-1.jpeg',
-    '/joaquim/joaquim-2.jpeg',
-    '/joaquim/joaquim-3.jpeg',
-    '/joaquim/joaquim-4.jpeg',
-    '/joaquim/joaquim-5.jpeg',
-    '/joaquim/joaquim-6.jpeg',
-    '/joaquim/joaquim-7.jpeg',
-  ];
+  const photos = [foto1, foto2, foto3, foto4, foto5, foto6, foto7];
 
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 

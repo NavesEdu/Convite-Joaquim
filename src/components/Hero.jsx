@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css'; // O CSS ainda é necessário para o estilo
 
+import heroBackground from '../assets/dino-fundo.jpg';
+
 function Hero() {
   const calculateTimeLeft = () => {
     // IMPORTANTE: Substitua pela data e hora da sua festa!
@@ -29,7 +31,7 @@ function Hero() {
   });
 
   return (
-    <div className="hero-container">
+    <div className="hero-container" style={{ backgroundImage: `url(${heroBackground})` }}>
       <div className="hero-text">
         <h1>Você está convidado para a Dino-Festa!</h1>
         <h2 className="subtitle">

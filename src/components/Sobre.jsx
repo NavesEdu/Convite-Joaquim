@@ -2,6 +2,8 @@
 import React from 'react';
 import './Sobre.css';
 
+import fotoJoaquim from '../assets/joaquim-1.jpeg';
+
 function Sobre() {
   return (
     <div className="content-section">
@@ -10,7 +12,7 @@ function Sobre() {
       <div className="sobre-container">
         {/* Coluna da Esquerda: A Foto */}
         <div className="sobre-image">
-          <img src="public\joaquim\joaquim-1.jpeg" alt="Foto do bebê" />
+          <img src={fotoJoaquim} alt="Foto do Joaquim" />
         </div>
 
         {/* Coluna da Direita: O Texto */}
