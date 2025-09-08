@@ -6,6 +6,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ "master" ]
+  
+  pull_request:
+    branches: [ "main" ]
+
   workflow_dispatch:
 
 # Permissões necessárias para o workflow interagir com seu repositório
