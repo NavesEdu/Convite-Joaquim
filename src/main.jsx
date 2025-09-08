@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import InvitationPage from './components/invitationPage.jsx';
-import { parties } from './partyData'; // Importa nossos dados
+import { parties } from './partyData';
 import './index.css';
 
 // Cria o roteador com as diferentes páginas

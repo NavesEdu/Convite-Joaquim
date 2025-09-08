@@ -1,6 +1,3 @@
-// src/partyData.js
-
-// Objeto com as informações de cada festa
 export const parties = {
   joaquim_carmo: {
     name: "Joaquim",
