@@ -1,6 +1,5 @@
 // src/components/Sobre.jsx
 import React from 'react';
-import './Sobre.css';
 
 import fotoJoaquim from '../assets/joaquim-1.jpeg';
 

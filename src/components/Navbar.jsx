@@ -1,7 +1,8 @@
 // src/components/Navbar.jsx
 
 import React, { useState } from 'react';
-import './Navbar.css'; // Vamos criar este arquivo de CSS a seguir
+
+import dinoIcon from '../assets/dino.png';
 
 function Navbar() {
   // 'useState' é um "gancho" (hook) do React que nos permite guardar um estado.
@@ -16,7 +17,10 @@ function Navbar() {
   return (
     <header className="navbar-header">
       <div className="logo">
-        <a href="#inicio">Festa do Joaquim</a>
+        <a href="#inicio">
+          Festa do Joaquim
+          <img src={dinoIcon} alt="Ícone de Dinossauro" className="logo-icon" />
+        </a>
       </div>
 
       {/* O botão "hambúrguer" que só aparece em telas pequenas */}

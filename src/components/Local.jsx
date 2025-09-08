@@ -1,6 +1,5 @@
 // src/components/Local.jsx
 import React from 'react';
-import './Local.css'; // Criaremos este arquivo de CSS para estilizar o mapa
 
 function Local() {
   return (

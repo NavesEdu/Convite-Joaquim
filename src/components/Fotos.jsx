@@ -1,6 +1,5 @@
 // src/components/Fotos.jsx
 import React, { useState } from 'react';
-import './Fotos.css'; // Criaremos este arquivo de CSS específico para Fotos
 
 import foto1 from '../assets/joaquim-1.jpeg';
 import foto2 from '../assets/joaquim-2.jpeg';

@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
 import React, { useState, useEffect } from 'react';
-import './Hero.css'; // O CSS ainda é necessário para o estilo
 
 import heroBackground from '../assets/dino-fundo.jpg';
 

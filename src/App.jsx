@@ -7,7 +7,7 @@ import Fotos from './components/Fotos';
 import Presentes from './components/Presentes';
 import Local from './components/Local';
 import Footer from './components/Footer';
-import './App.css'; // Importa o nosso CSS principal e consolidado
+import './App.css';
 
 function App() {
   return (

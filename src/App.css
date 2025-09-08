@@ -1,40 +1,85 @@
-/* --- Estilos Gerais --- */
+/* --- Estilos Gerais e Estrutura --- */
 .App {
   text-align: center;
-  position: relative; /* Contexto para o fundo animado */
-  z-index: 1; /* Garante que o conteúdo fique acima do fundo */
+  position: relative;
+  z-index: 1;
 }
 
-main {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh; /* Ocupa a altura total da tela */
+/* --- Cabeçalho e Navegação (Navbar) --- */
+.navbar-header {
+  background-color: var(--verde-floresta);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-main > section {
-  scroll-snap-align: start; /* Alinha cada seção no topo */
-  min-height: 100vh; /* Garante que cada seção ocupe a tela */
+.navbar-header .logo a {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  color: var(--amarelo-sol);
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: var(--off-white);
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--fonte-titulo);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--amarelo-sol);
+}
+
+.navbar-header .logo a {
+  /* Usamos flexbox para alinhar o texto e o ícone na mesma linha */
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-  box-sizing: border-box;
+  gap: 0.5rem; /* Espaço entre o texto e o ícone */
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  color: var(--amarelo-sol);
+  text-decoration: none;
+}
+
+.logo-icon {
+  /* Define o tamanho do ícone */
+  width: 30px;
+  height: 30px;
 }
 
 /* --- Seção Principal (Hero) --- */
 .hero-container {
-  /* Garante que o Hero preencha a seção de snap */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  background-color: var(--azul-ceu);
+  background-image: url('/images/dino-fundo.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
+  padding: 6rem 2rem 4rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .hero-container::before {
@@ -48,19 +93,114 @@ main > section {
   z-index: 1;
 }
 
-.hero-container h1, .hero-container h2, .hero-container p, .hero-container .countdown, .hero-container .hero-button {
+.hero-text, .countdown, .hero-button {
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
-/* --- Estilos para os Cartões de Seção --- */
+.hero-text h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  color: var(--amarelo-sol);
+  text-shadow: 3px 3px 5px var(--verde-floresta);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2.subtitle {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--off-white);
+}
+
+.highlight-text {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--amarelo-sol);
+  margin-top: 0.5rem;
+  animation: subtle-glow 3s infinite alternate ease-in-out;
+}
+
+@keyframes subtle-glow {
+  from { text-shadow: 2px 2px 4px var(--verde-floresta); }
+  to { text-shadow: 2px 2px 8px var(--verde-floresta), 0 0 10px var(--amarelo-sol); }
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Contagem Regressiva */
+.countdown {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 80px;
+  backdrop-filter: blur(5px);
+}
+
+.countdown-item span {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.countdown-item small {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.party-time {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  color: var(--amarelo-sol);
+}
+
+/* Botão de Ação do Hero */
+.hero-button {
+    margin-top: 1rem;
+    padding: 12px 25px;
+    background-color: var(--amarelo-sol);
+    color: var(--verde-floresta);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid var(--amarelo-sol);
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: transparent;
+    color: var(--amarelo-sol);
+    transform: scale(1.05);
+}
+
+/* --- Estilos para as Seções de Conteúdo --- */
 .content-section {
-  padding: 2rem;
+  padding: 4rem 2rem;
   max-width: 800px;
   width: 90%;
-  margin: 1rem auto;
+  margin: 3rem auto;
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .content-section h2 {
@@ -69,31 +209,93 @@ main > section {
   color: var(--verde-floresta);
 }
 
-/* --- Galeria de Fotos --- */
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+/* Seção Sobre */
+.sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
   margin-top: 2rem;
 }
-
-.gallery img {
+.sobre-image img {
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  border-radius: 15px;
+  border: 4px solid var(--verde-menta);
+  transition: transform 0.3s ease;
+}
+.sobre-image img:hover { transform: scale(1.05); }
+.sobre-text { text-align: left; }
+.sobre-text p { font-size: 1.1rem; line-height: 1.6; color: #555; }
+
+/* Seção Fotos (Carrossel) */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
   border: 5px solid var(--verde-menta);
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* IMPORTANTE: Adiciona uma altura mínima ao container para o espaço do carrossel */
+  min-height: 300px; /* Altura padrão para desktop */
 }
 
-.gallery img:hover {
-  transform: scale(1.08) rotate(2deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.carousel-image-wrapper {
+  width: 100%;
+  height: 400px; /* Altura fixa para o wrapper da imagem no desktop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que nada transborde */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%; /* Preenche 100% da altura do wrapper */
+  display: block;
+  object-fit: contain; /* Cobre o container sem distorcer, cortando se necessário */
+  object-position: center; /* Centraliza a imagem no corte */
+  transition: transform 0.5s ease-in-out; /* Transição para a imagem, se tivermos mais efeitos */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 10px;
   cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
+.carousel-button:hover { background-color: rgba(0, 0, 0, 0.7); }
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+.carousel-indicators { margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem; }
+.indicator { width: 12px; height: 12px; background-color: var(--verde-menta); border-radius: 50%; cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--verde-menta); }
+.indicator.active { background-color: var(--amarelo-sol); border-color: var(--amarelo-sol); transform: scale(1.2); }
 
-/* --- Estilo do Botão --- */
+/* Seção Local */
+.local-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: left;
+}
+.address-info h3 { font-family: var(--fonte-titulo); color: var(--verde-floresta); font-size: 1.8rem; }
+.address-info p { font-size: 1.1rem; line-height: 1.6; }
+.map-container { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; border: 4px solid var(--verde-menta); }
+.map-container iframe { width: 100%; height: 100%; border: none; }
+
+
+/* --- Botão Geral --- */
 .button {
   display: inline-block;
   margin-top: 1rem;
@@ -104,9 +306,8 @@ main > section {
   text-decoration: none;
   font-weight: bold;
   border: 2px solid var(--amarelo-sol);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 .button:hover {
   background-color: var(--verde-menta);
   color: white;
@@ -119,5 +320,39 @@ footer {
   background-color: var(--verde-floresta);
   color: var(--off-white);
   padding: 1.5rem;
-  width: 100%;
+  margin-top: 2rem;
+}
+
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+  /* Menu */
+  .hamburger { display: block; }
+  .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background-color: var(--verde-floresta); padding: 1rem 0; }
+  .nav-links.open { display: flex; }
+  .nav-links a { margin: 10px 0; text-align: center; }
+
+  /* Hero */
+  .countdown-item { min-width: 60px; padding: 0.5rem; }
+  .countdown-item span { font-size: 1.8rem; }
+
+  /* Sobre */
+  .sobre-container { grid-template-columns: 1fr; text-align: center; }
+  .sobre-image { margin-bottom: 2rem; }
+
+  /* Fotos */
+  .carousel-container {
+    min-height: 250px; /* Altura mínima menor para mobile */
+  }
+  .carousel-image-wrapper {
+    height: 300px; /* Altura menor para o wrapper da imagem no mobile */
+  }
+  .carousel-image {
+    max-height: 70vh; /* Limita a altura máxima da imagem em relação à tela do celular */
+  }
+  .carousel-button { padding: 10px 8px; font-size: 1.2rem; }
+  
+  /* Local */
+  .local-container { grid-template-columns: 1fr; text-align: center; }
+  .map-container { order: -1; margin-bottom: 2rem; height: 300px; }
 }
