@@ -6,6 +6,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import InvitationPage from './components/invitationPage.jsx';
 import { parties } from './partyData';
 import './index.css';
+import './App.css';
 
 // Cria o roteador com as diferentes páginas
 const router = createHashRouter([
