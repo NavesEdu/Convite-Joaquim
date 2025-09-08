@@ -9,7 +9,7 @@ import foto5 from '../assets/joaquim-5.jpeg';
 import foto6 from '../assets/joaquim-6.jpeg';
 import foto7 from '../assets/joaquim-7.jpeg';
 
-function Fotos() {
+function Fotos({ partyData }) {
   const photos = [foto1, foto2, foto3, foto4, foto5, foto6, foto7];
 
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);

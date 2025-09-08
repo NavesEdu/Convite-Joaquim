@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import heroBackground from '../assets/dino-fundo.jpg';
 
-function Hero() {
+function Hero({ partyData }) {
   const calculateTimeLeft = () => {
     // IMPORTANTE: Substitua pela data e hora da sua festa!
     const difference = +new Date(`2025-11-30T16:00:00`) - +new Date();

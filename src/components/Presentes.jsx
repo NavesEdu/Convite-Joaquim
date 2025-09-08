@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Presentes() {
+function Presentes({ partyData }) {
   return (
     <div className="content-section">
       <h2>Lista de Presentes</h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer({ partyData }) {
     return (
         <footer>
             <p>Feito com amor para o 1º aninho do Joaquim</p>

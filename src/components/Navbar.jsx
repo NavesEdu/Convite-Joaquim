@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import dinoIcon from '../assets/dino.png';
 
-function Navbar() {
+function Navbar({ partyData }) {
   // 'useState' é um "gancho" (hook) do React que nos permite guardar um estado.
   // 'isOpen' guardará a informação se o menu mobile está aberto ou fechado.
   const [isOpen, setIsOpen] = useState(false);

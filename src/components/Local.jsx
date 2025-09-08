@@ -1,7 +1,7 @@
 // src/components/Local.jsx
 import React from 'react';
 
-function Local() {
+function Local({ partyData }) {
   return (
     <div className="content-section">
       <h2>Local da Expedição</h2>

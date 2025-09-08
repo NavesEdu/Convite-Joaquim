@@ -3,7 +3,7 @@ import React from 'react';
 
 import fotoJoaquim from '../assets/joaquim-1.jpeg';
 
-function Sobre() {
+function Sobre({ partyData }) {
   return (
     <div className="content-section">
       <h2>Nossa Pequena Aventura</h2>
