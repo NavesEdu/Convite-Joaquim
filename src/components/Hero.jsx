@@ -32,10 +32,10 @@ function Hero() {
   return (
     <div className="hero-container" style={{ backgroundImage: `url(${heroBackground})` }}>
       <div className="hero-text">
-        <h1>Você está convidado para a Dino-Festa!</h1>
+        <h1>Você está convidado para a {partyData.theme}!</h1>
         <h2 className="subtitle">
           para comemorar o
-          <span className="highlight-text">1º Aninho do Joaquim</span>
+          <span className="highlight-text">{partyData.age} do {partyData.name}</span>
         </h2>
       </div>
 
